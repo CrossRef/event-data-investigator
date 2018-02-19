@@ -12,16 +12,25 @@
 (defn fetch-query-api
   "Fetch a lazy seq of Events from the Query API that match the filter."
   ([filter-str] (fetch-query-api filter-str "" 0))
+  ([filter-str cursor] (fetch-query-api filter-str cursor 0))
   ([filter-str cursor cnt]
     (log/info "Fetch Query API:" filter-str "cursor" cursor)
-    (let [response (try-try-again {:sleep 30000 :tries 10}
-                                  #(deref (client/get url
-                                               {:query-params
-                                                {:filter filter-str
-                                                 :cursor cursor}
-                                                :as :stream
-                                                :timeout 900000})))
-          body (json/read (io/reader (:body response)) :key-fn keyword)
+    (let [body (try-try-again {:sleep 60000 :tries 10}
+                                  (fn []
+
+                                    (let [response @(client/get url 
+                                         {:query-params
+                                          { :mailto "investigator+labs@crossref.org"
+                                            :filter filter-str
+                                           :cursor cursor}
+                                          :as :stream
+                                          :timeout 900000})]
+                                      (when-not (= 200 (:status response))
+                                        (log/error response)
+                                        (throw (Exception.)))
+
+                                      (-> response :body io/reader (json/read :key-fn keyword)))))
+
           events (-> body :message :events)
           next-cursor (-> body :message :next-cursor)
           cnt (+ cnt (count events))

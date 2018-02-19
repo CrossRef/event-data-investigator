@@ -18,7 +18,7 @@
   []
   (let [jwt (bus/build-jwt "wikipedia")
         events (query/fetch-query-api "source:wikipedia,relation-type:replaces")
-        updated-events (map update-event events)]
+        updated-events (keep update-event events)]
     (dorun
       (pmap
         (fn [event]

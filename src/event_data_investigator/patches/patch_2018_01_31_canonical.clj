@@ -11,20 +11,23 @@
   [event]
   ; Only old-style events with the version number in the subj-id apply.
   ; Newer ones, as of approx 2018-01-16, are correct.
-  (if-not
-    (.contains (-> event :subj_id) "w/index.php")
-    (do
-      (log/info "Skip" (:id event))
-      nil)
-
-    (assoc event
-      :subj_id (-> event :subj :url)
-      :subj (assoc
-             (:subj event)
-             :pid (-> event :subj :url)
-             :url (-> event :subj :pid))
-      :updated_reason reason
-      :updated_date updated-date)))
+  (when-not (:updated event)
+    (if-not
+      (.contains (-> event :subj_id) "w/index.php")
+      (do
+        (log/info "Skip" (:id event))
+        nil)
+      (do
+        (log/info "subj_id is" (-> event :subj_id) (.contains (-> event :subj_id) "w/index.php"))
+        (assoc event
+          :subj_id (-> event :subj :url)
+          :subj (assoc
+                 (:subj event)
+                 :pid (-> event :subj :url)
+                 :url (-> event :subj :pid))
+          :updated "edited"
+          :updated_reason reason
+          :updated_date updated-date)))))
 
 (defn run
   []
