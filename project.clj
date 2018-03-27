@@ -1,4 +1,4 @@
-(defproject event-data-investigator "0.1.0"
+(defproject event-data-investigator "0.1.1"
   :description "Event Data Investigator"
   :url "https://www.crossref.org/services/event-data"
   :license {:name "MIT License"
@@ -8,7 +8,7 @@
                  [robert/bruce "0.8.0"]
                  [http-kit "2.3.0-alpha5"]
                  [org.clojure/data.json "0.2.6"]
-                 [clojurewerkz/quartzite "2.1.0"]]
+                 [clj-http-fake "1.0.3"]]
   :main ^:skip-aot event-data-investigator.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

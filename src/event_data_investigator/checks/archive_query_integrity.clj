@@ -14,14 +14,7 @@
             [event-data-common.checkpoint :as checkpoint]
             [event-data-common.whitelist :as whitelist]
             [clj-time.core :as clj-time]
-            [event-data-common.evidence-log :as evidence-log]
-
-            [clojurewerkz.quartzite.triggers :as t]
-            [clojurewerkz.quartzite.jobs :as j]
-            [clojurewerkz.quartzite.jobs :refer [defjob]]
-            [clojurewerkz.quartzite.schedule.daily-interval
-             :refer
-             [schedule starting-daily-at time-of-day on-every-day]]))
+            [event-data-common.evidence-log :as evidence-log]))
 
 (defn check
   "Check the integrity for a given day. Return missing Event IDs."
@@ -44,7 +37,10 @@
         ; Check whether, under today's rules, it should be present.
         whitelisted (whitelist/filter-events events-from-bus)
 
-        query-missing (map :id whitelisted)]
+        ; Experimental Events don't count.
+        production (remove :experimental whitelisted)
+
+        query-missing (map :id production)]
 
     {:query-missing query-missing
      :bus-missing bus-missing}))

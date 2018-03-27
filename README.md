@@ -21,17 +21,13 @@ Sometimes we need to patch Events. The code involved in the updates will be stor
 
 The Investigator runs integrity checks on a schedule and reports any errors.
 
-### Query vs Archive
+### Archive / Query Integrity
 
-The `query-vs-archive` check looks at all of the Event IDs in the Event Bus Archive for a given day. It compares them to the Query API. It does this day by day. Any Event IDs missing from the Query API are reported.
-
-### Archive vs Query
-
-The `archive-vs-query` check looks at all of the Event IDs in the Query API for a given day. It compares them to the Event Bus Archive. It does this day by day. Any Event IDs missing from the Archive are reported.
+These two checks look at all of the Event IDs in the Event Bus Archive for a given day. It compares them to the Query API. It does this day by day. Any Event IDs missing from the Query API are reported.
 
 ### Missing Evidence Log
 
-The `evidence-log-present` checks that the Evidence Log file is available for a given day in JSON and CSV format.
+The daily Evidence Log dumps in CSV and JSON format are checked daily.
 
 ## Running
 

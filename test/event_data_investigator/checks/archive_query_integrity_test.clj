@@ -54,8 +54,18 @@
       (let [{query-missing :query-missing
             bus-missing :bus-missing} (archive-query-integrity/check (clj-time/date-time 2018 11 1))]
         (is (= (set query-missing) #{"8888"}) "Only Events that match the whitelist should be reported as missing.")
-        (is (empty? bus-missing) "No Events should be missing from the archive.")))))
+        (is (empty? bus-missing) "No Events should be missing from the archive."))))
 
+  (testing "check should not return missing Events for Query API if they're Experimental (i.e. not Production ready)."
+    (with-redefs [query/event-ids-for-day (fn [_] #{"1234" "5678"})
+                  bus/event-ids-for-day (fn [_] #{"1234" "5678" "XXXX" "YYYY"})
+                  bus/get-event {"XXXX" {:id "XXXX"} "YYYY" {:id "YYYY" :experimental true}}
+                  whitelist/filter-events identity]
+
+      (let [{query-missing :query-missing
+            bus-missing :bus-missing} (archive-query-integrity/check (clj-time/date-time 2018 11 1))]
+        (is (= (set query-missing) #{"XXXX"}) "Experimental Events should be ignored.")
+        (is (empty? bus-missing) "No Events should be missing from the archive.")))))
 
 (deftest check-and-report
   (testing "check-and-report should not report issue if there are no missing Events."
