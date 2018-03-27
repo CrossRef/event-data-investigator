@@ -29,6 +29,10 @@ These two checks look at all of the Event IDs in the Event Bus Archive for a giv
 
 The daily Evidence Log dumps in CSV and JSON format are checked daily.
 
+### Evidence Record Snapshot
+
+This check ensures that the daily snapshot of input Evidence Records exists. 
+
 ## Running
 
 Run scheduled checks:
@@ -50,6 +54,11 @@ The following environment variables are expected:
  - `GLOBAL_EVENT_BUS_BASE`
  - `QUERY_PREFIX_WHITELIST_ARTIFACT_NAME`
  - `QUERY_WHITELIST_ARTIFACT_NAME`
+ - `STATUS_SNAPSHOT_S3_KEY`
+ - `STATUS_SNAPSHOT_S3_SECRET`
+ - `STATUS_SNAPSHOT_S3_REGION_NAME`
+ - `STATUS_SNAPSHOT_S3_BUCKET_NAME`
+
 
 In order to authenticate with GitHub, an access token with the 'repo' scope is required. The `crossref-support` account is used.
 

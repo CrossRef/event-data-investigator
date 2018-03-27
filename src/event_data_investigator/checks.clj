@@ -1,11 +1,15 @@
 (ns event-data-investigator.checks
   (:require [event-data-investigator.checks.archive-query-integrity :as archive-query-integrity]
+            [event-data-investigator.checks.evidence-log :as evidence-log]
+            [event-data-investigator.checks.evidence-record-snapshot :as evidence-record-snapshot]
             [overtone.at-at :as at-at]
             [clojure.tools.logging :as log]
             [clj-time.core :as clj-time]))
 
 (def manifests
-  {:archive-query-integrity archive-query-integrity/manifest})
+  {:archive-query-integrity archive-query-integrity/manifest
+   :evidence-log evidence-log/manifest
+   :evidence-record-snapshot evidence-record-snapshot/manifest})
 
 (def schedule-pool (at-at/mk-pool))
 
