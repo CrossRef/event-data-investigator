@@ -32,7 +32,7 @@
 (defn run
   []
   (let [jwt (bus/build-jwt "wikipedia")
-        events (query/fetch-query-api "source:wikipedia,relation-type:references")
+        events (query/fetch-query-api "/v1/events" {:source "wikipedia" :relation-type "references"} :events)
         ; update-event may return nil if there's no change.
         ; Skip these.
         updated-events (keep update-event events)]
@@ -42,3 +42,5 @@
           (log/debug "Send event ID:" (:id event))
           (bus/send-event event jwt))
         updated-events))))
+
+

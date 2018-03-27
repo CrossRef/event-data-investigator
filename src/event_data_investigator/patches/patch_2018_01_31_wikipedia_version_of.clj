@@ -17,7 +17,7 @@
 (defn run
   []
   (let [jwt (bus/build-jwt "wikipedia")
-        events (query/fetch-query-api "source:wikipedia,relation-type:is_version_of")
+        events (query/fetch-query-api "/v1/events" {:source "wikipedia" :relation-type "is_version_of"} :events)
         updated-events (keep update-event events)]
     (dorun
       (pmap

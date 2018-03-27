@@ -1,7 +1,13 @@
 (ns event-data-investigator.core
-  (:gen-class))
-
+  (:require [event-data-investigator.checks :as checks]
+            [clojure.tools.logging :as log]))
+  
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (let [command (first args)]
+    (condp = command
+      "scheduled-checks" (checks/start-schedule)
+
+      (log/error "Didn't recognise command:" command))))
+
+
