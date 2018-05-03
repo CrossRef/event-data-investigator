@@ -1,0 +1,36 @@
+version: '2'
+
+
+services:
+  investigator:
+    build: .
+    volumes:
+     - .:/usr/src/app
+     - ./.m2-cache:/root/.m2
+    environment:
+     - GLOBAL_EVENT_BUS_BASE=https://bus.eventdata.crossref.org
+     - INVESTIGATOR_GITHUB_TOKEN=ABCD
+     - GLOBAL_ARTIFACT_URL_BASE=https://artifact.eventdata.crossref.org
+     - GLOBAL_JWT_SECRETS=TEST,TEST2
+     - QUERY_PREFIX_WHITELIST_ARTIFACT_NAME=crossref-doi-prefix-list
+     - QUERY_WHITELIST_ARTIFACT_NAME=crossref-sourcelist
+
+     # - AGENT_CHECKPOINT_S3_KEY=
+     # - AGENT_CHECKPOINT_S3_SECRET=
+     # - AGENT_CHECKPOINT_S3_REGION_NAME=
+     # - AGENT_CHECKPOINT_S3_BUCKET_NAME=
+ 
+     # - STATUS_SNAPSHOT_S3_KEY=
+     # - STATUS_SNAPSHOT_S3_SECRET=
+     # - STATUS_SNAPSHOT_S3_REGION_NAME=
+     # - STATUS_SNAPSHOT_S3_BUCKET_NAME=
+
+
+     # - INVESTIGATOR_TWITTER_PASWORD=
+     # - INVESTIGATOR_TWITTER_API_KEY=
+     # - INVESTIGATOR_TWITTER_API_SECRET=
+     # - INVESTIGATOR_TWITTER_ACCESS_TOKEN=
+     # - INVESTIGATOR_TWITTER_ACCESS_TOKEN_SECRET=
+
+    command: "lein repl"
+

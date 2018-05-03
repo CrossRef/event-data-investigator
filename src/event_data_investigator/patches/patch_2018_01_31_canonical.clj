@@ -2,7 +2,7 @@
   "Update all old Wikipedia Events to use the canonical URL as the subj-id. Swap the subj_id and subj.url."
   (:require [clojure.tools.logging :as log]
             [event-data-investigator.query :as query]
-            [event-data-investigator.bus :as bus]))
+            [event-data-common.event-bus :as bus]))
 
 (def reason "https://evidence.eventdata.crossref.org/announcements/2018-01-19T00-00-00Z-ED-15.json")
 (def updated-date "2018-01-31T17:30:00Z")
