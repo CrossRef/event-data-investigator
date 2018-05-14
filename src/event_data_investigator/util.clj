@@ -1,6 +1,7 @@
 (ns event-data-investigator.util
   (:require [clj-time.core :as clj-time]
-            [clj-time.periodic :as periodic]))
+            [clj-time.periodic :as periodic]
+            [clj-time.format :as clj-time-format]))
 
 (def collected-epoch
   "The earliest date on which any Event Data took place."
@@ -17,3 +18,10 @@
     (take-while
       #(clj-time/before? % stop)
       (periodic/periodic-seq collected-epoch (clj-time/days 1)))))
+
+; TODO this could be moved into event-data-common.
+(def second-formatter (clj-time-format/formatters :date-time-no-ms))
+
+(defn ->yyyy-mm-dd-hh-mm-ss
+  [date-time]
+  (clj-time-format/unparse second-formatter date-time))

@@ -44,9 +44,10 @@
 
 (defn run
   []
-  (let [;jwt @bus/wildcard-jwt
-        jwt twitter-jwt
-        events (query/fetch-query-api "/v1/events" {:source "twitter" :until-collected-date "2017-02-25"} :events)
+  (let [jwt twitter-jwt
+        normal-events (query/fetch-query-api "/v1/events" {:source "twitter" :until-collected-date "2017-02-25"} :events)
+        deleted-events (query/fetch-query-api "/v1/events/deleted" {:source "twitter"  :until-collected-date "2017-02-25"} :events)
+        events (concat normal-events deleted-events)
         updated-events (keep update-event events)
         counter (atom 0)]
 
