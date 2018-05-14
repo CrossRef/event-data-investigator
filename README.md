@@ -37,11 +37,11 @@ This check ensures that the daily snapshot of input Evidence Records exists.
 
 Run scheduled checks:
 
-    time docker-compose -f docker-compose-local.yml run -w /usr/src/app investigator lein run scheduled-checks
+    time docker-compose -f docker-compose.yml run -w /usr/src/app investigator lein run scheduled-checks
 
 Running locally:
 
-    time docker-compose -f docker-compose-local.yml run -w /usr/src/app investigator lein repl
+    time docker-compose -f docker-compose.yml run -w /usr/src/app investigator lein repl
 
 ## Config
 
@@ -58,9 +58,24 @@ The following environment variables are expected:
  - `STATUS_SNAPSHOT_S3_SECRET`
  - `STATUS_SNAPSHOT_S3_REGION_NAME`
  - `STATUS_SNAPSHOT_S3_BUCKET_NAME`
-
+ - `TWITTER_PASWORD`
+ - `TWITTER_API_KEY`
+ - `TWITTER_API_SECRET`
+ - `TWITTER_ACCESS_TOKEN`
+ - `TWITTER_ACCESS_TOKEN_SECRET`
+ - `PERCOLATOR_EVIDENCE_BUCKET_NAME` - access to Evidence Record bucket for patching.
+ - `PERCOLATOR_EVIDENCE_REGION_NAME`
+ - `PERCOLATOR_EVIDENCE_STORAGE`
+ - `PERCOLATOR_S3_KEY`
+ - `PERCOLATOR_S3_SECRET`
 
 In order to authenticate with GitHub, an access token with the 'repo' scope is required. The `crossref-support` account is used.
+
+Twitter details come from dashboard at https://apps.twitter.com/ .
+
+## Test
+
+  time docker-compose -f docker-compose.yml run -w /usr/src/app investigator lein test
 
 ## License
 

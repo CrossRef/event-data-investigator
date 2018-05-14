@@ -1,0 +1,107 @@
+{
+  "source-token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+  "agent": {
+    "version": "0.1.8"
+  },
+  "pages": [
+    {
+      "actions": [
+        {
+          "occurred-at": "2017-02-17T09:17:34.000Z",
+          "processed-observations": [
+            {
+              "type": "plain-text",
+              "sensitive": true,
+              "error": "unrecognised-observation-type",
+              "input-content-hash": "7265b94fa804e93d6df86146f584c44b911c9fcd"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/jRsjIzSBQf",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://rspb.royalsocietypublishing.org/content/283/1832/20160792",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://rspb.royalsocietypublishing.org/content/283/1832/20160792"
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "obj_id": "https://doi.org/10.1098/rspb.2016.0792",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-02-17T09:17:34.000Z",
+              "subj_id": "http://twitter.com/TWITTER_USER_123/statuses/12345",
+              "id": "AAAAAAAA-BBBB-4955-a9b4-6f5e18421348",
+              "action": "add",
+              "subj": {
+                "pid": "http://twitter.com/TWITTER_USER_123/statuses/12345",
+                "title": "Tweet 12345",
+                "issued": "2017-02-17T09:17:34.000Z",
+                "author": {
+                  "url": "http://www.twitter.com/TWITTER_USER_123"
+                },
+                "original-tweet-url": "http://twitter.com/TWITTER_USER_456/statuses/67890",
+                "original-tweet-author": "http://www.twitter.com/TWITTER_USER_456"
+              },
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1098/rspb.2016.0792",
+                "url": "https://doi.org/10.1098/rspb.2016.0792"
+              },
+              "evidence-record": "https://evidence.eventdata.crossref.org/evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a",
+              "relation_type_id": "discusses"
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              832267756192067600
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "http://rspb.royalsocietypublishing.org/content/283/1832/20160792",
+              "match": "https://doi.org/10.1098/rspb.2016.0792"
+            }
+          ],
+          "id": "5c50eb3508b6113aa133a73379b19bcb8f80bc1d",
+          "url": "http://twitter.com/TWITTER_USER_123/statuses/12345",
+          "subj": {
+            "title": "Tweet 12345",
+            "issued": "2017-02-17T09:17:34.000Z",
+            "author": {
+              "url": "http://www.twitter.com/TWITTER_USER_123"
+            },
+            "original-tweet-url": "http://twitter.com/TWITTER_USER_456/statuses/67890",
+            "original-tweet-author": "http://www.twitter.com/TWITTER_USER_456"
+          },
+          "relation-type-id": "discusses"
+        }
+      ]
+    }
+  ],
+  "percolator": {
+    "artifacts": {
+      "domain-set-artifact-version": "http://d1v52iseus4yyg.cloudfront.net/a/crossref-domain-list/versions/1482489046417"
+    },
+    "software-version": "0.1.3"
+  },
+  "id": "20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a",
+  "url": "/evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a",
+  "source-id": "twitter",
+  "web-trace": [
+    {
+      "url": "http://rspb.royalsocietypublishing.org/content/283/1832/20160792",
+      "status": 200
+    }
+  ],
+  "timestamp": "2017-02-17T12:19:39.206Z"
+}

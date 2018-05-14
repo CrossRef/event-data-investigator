@@ -1,0 +1,1199 @@
+{
+  "source-token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "agent": {
+    "version": "1.1.7",
+    "name": "twitter-agent"
+  },
+  "pages": [
+    {
+      "actions": [
+        {
+          "occurred-at": "2017-11-28T09:19:36Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "02d4d8c2f7ef080aef1769b30f9b17ae848e3fac"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/COY0wFkZBp",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://www.seguridadinternacional.es/?q=es/content/pensando-en-la-desintegracion-de-la-union-europea",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://www.seguridadinternacional.es/?q=es/content/pensando-en-la-desintegracion-de-la-union-europea"
+                }
+              ]
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156255862800,
+              930469156260106200
+            ]
+          },
+          "matches": [],
+          "id": "e2bc4e16f862d87fcdb784d0eac6ab100425c26b",
+          "url": "http://twitter.com/RRRRR/statuses/111111111111111111",
+          "subj": {
+            "title": "Tweet 111111111111111111",
+            "issued": "2017-11-28T09:19:36.000Z",
+            "author": {
+              "url": "http://www.twitter.com/RRRRR"
+            },
+            "original-tweet-url": "http://twitter.com/SSSSS/statuses/222222222222222222",
+            "original-tweet-author": "http://www.twitter.com/SSSSS",
+            "alternative-id": "111111111111111111"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:36Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "668decf410b592fcd0899bada6628ecab47e85e9"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/ewrClfVFWe",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "26e693263cff68bb0324bcb47ba498de9531dc0e",
+          "url": "http://twitter.com/TTTTT/statuses/333333333333333333",
+          "subj": {
+            "title": "Tweet 333333333333333333",
+            "issued": "2017-11-28T09:19:36.000Z",
+            "author": {
+              "url": "http://www.twitter.com/TTTTT"
+            },
+            "original-tweet-url": "http://twitter.com/TTTTT/statuses/333333333333333333",
+            "original-tweet-author": null,
+            "alternative-id": "333333333333333333"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:37Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "874829525806ef374291f40919924ac25919a127"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/DbBNjIMJ8H",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://www.sciencedirect.com/science/authShare/S0167488917303051/20171127T174900Z/1?md5=4f61e2cae7c9c243c0b42b9e178ecb6b",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://www.sciencedirect.com/science/authShare/S0167488917303051/20171127T174900Z/1?md5=4f61e2cae7c9c243c0b42b9e178ecb6b"
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+              "obj_id": "https://doi.org/10.1016/j.bbamcr.2017.11.006",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-11-28T09:19:37Z",
+              "subj_id": "http://twitter.com/UUUUU/statuses/444444444444444444",
+              "id": "8ca46f71-d4ba-48fe-a065-5e7c1eef1819",
+              "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+              "action": "add",
+              "subj": {
+                "pid": "http://twitter.com/UUUUU/statuses/444444444444444444",
+                "url": "http://twitter.com/UUUUU/statuses/444444444444444444",
+                "title": "Tweet 444444444444444444",
+                "issued": "2017-11-28T09:19:37.000Z",
+                "author": {
+                  "url": "http://www.twitter.com/UUUUU"
+                },
+                "original-tweet-url": "http://twitter.com/UUUUU/statuses/444444444444444444",
+                "original-tweet-author": null,
+                "alternative-id": "444444444444444444"
+              },
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1016/j.bbamcr.2017.11.006",
+                "url": "http://www.sciencedirect.com/science/authShare/S0167488917303051/20171127T174900Z/1?md5=4f61e2cae7c9c243c0b42b9e178ecb6b"
+              },
+              "relation_type_id": "discusses"
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156260106200
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "http://www.sciencedirect.com/science/authShare/S0167488917303051/20171127T174900Z/1?md5=4f61e2cae7c9c243c0b42b9e178ecb6b",
+              "match": "https://doi.org/10.1016/j.bbamcr.2017.11.006"
+            }
+          ],
+          "id": "d9fd03835e5ea8645d9461d895bbc4c081715f58",
+          "url": "http://twitter.com/UUUUU/statuses/444444444444444444",
+          "subj": {
+            "title": "Tweet 444444444444444444",
+            "issued": "2017-11-28T09:19:37.000Z",
+            "author": {
+              "url": "http://www.twitter.com/UUUUU"
+            },
+            "original-tweet-url": "http://twitter.com/UUUUU/statuses/444444444444444444",
+            "original-tweet-author": null,
+            "alternative-id": "444444444444444444"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:37Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "d0425de25b5e59d62e650791717a4f9b1623d6c7"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/RtmndxiCqt",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "be8104f88bf170b8ae80b025bd62b4abc285321a",
+          "url": "http://twitter.com/VVVVV/statuses/555555555555555555",
+          "subj": {
+            "title": "Tweet 555555555555555555",
+            "issued": "2017-11-28T09:19:37.000Z",
+            "author": {
+              "url": "http://www.twitter.com/VVVVV"
+            },
+            "original-tweet-url": "http://twitter.com/VVVVV/statuses/555555555555555555",
+            "original-tweet-author": null,
+            "alternative-id": "555555555555555555"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:37Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "ea87edc72bbe715f8dc4422ae0a8c8f08562bef9"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/hTSpknwZHb",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://onlinelibrary.wiley.com/doi/10.1111/tesg.12297/full/",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://onlinelibrary.wiley.com/doi/10.1111/tesg.12297/full/"
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+              "obj_id": "https://doi.org/10.1111/tesg.12297",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-11-28T09:19:37Z",
+              "subj_id": "http://twitter.com/WWWWW/statuses/666666666666666666",
+              "id": "9dc537e6-868e-4115-a378-beeb3057610c",
+              "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+              "action": "add",
+              "subj": {
+                "pid": "http://twitter.com/WWWWW/statuses/666666666666666666",
+                "url": "http://twitter.com/WWWWW/statuses/666666666666666666",
+                "title": "Tweet 666666666666666666",
+                "issued": "2017-11-28T09:19:37.000Z",
+                "author": {
+                  "url": "http://www.twitter.com/WWWWW"
+                },
+                "original-tweet-url": "http://twitter.com/WWWWW/statuses/666666666666666666",
+                "original-tweet-author": null,
+                "alternative-id": "666666666666666666"
+              },
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1111/tesg.12297",
+                "url": "http://onlinelibrary.wiley.com/doi/10.1111/tesg.12297/full/"
+              },
+              "relation_type_id": "discusses"
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600,
+              930469156268511200
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "http://onlinelibrary.wiley.com/doi/10.1111/tesg.12297/full/",
+              "match": "https://doi.org/10.1111/tesg.12297"
+            }
+          ],
+          "id": "cd03dac3aa972315e78eaa7a009ab3b7b7381334",
+          "url": "http://twitter.com/WWWWW/statuses/666666666666666666",
+          "subj": {
+            "title": "Tweet 666666666666666666",
+            "issued": "2017-11-28T09:19:37.000Z",
+            "author": {
+              "url": "http://www.twitter.com/WWWWW"
+            },
+            "original-tweet-url": "http://twitter.com/WWWWW/statuses/666666666666666666",
+            "original-tweet-author": null,
+            "alternative-id": "666666666666666666"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:37Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "f8d486a9dd2680d162dbe87845759b53d71feaef"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://www.jstor.org/stable/2808563",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://www.jstor.org/stable/2808563"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/R3pJuzaa5g",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156260077600,
+              930469156251684900
+            ]
+          },
+          "matches": [],
+          "id": "f4c1fd4da67f44eec030f8d70c47f85ba677cde9",
+          "url": "http://twitter.com/XXXXX/statuses/777777777777777777",
+          "subj": {
+            "title": "Tweet 777777777777777777",
+            "issued": "2017-11-28T09:19:37.000Z",
+            "author": {
+              "url": "http://www.twitter.com/XXXXX"
+            },
+            "original-tweet-url": "http://twitter.com/XXXXX/statuses/777777777777777777",
+            "original-tweet-author": null,
+            "alternative-id": "777777777777777777"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:40Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "8b095f44b4dd73fa8ff2808225819a6f3ab419ac"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/ph2jD9wvTh",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "5934e2dcf47b738615853e3936f5e2932b83f4d3",
+          "url": "http://twitter.com/YYYYY/statuses/888888888888888888",
+          "subj": {
+            "title": "Tweet 888888888888888888",
+            "issued": "2017-11-28T09:19:40.000Z",
+            "author": {
+              "url": "http://www.twitter.com/YYYYY"
+            },
+            "original-tweet-url": "http://twitter.com/YYYYY/statuses/888888888888888888",
+            "original-tweet-author": null,
+            "alternative-id": "888888888888888888"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:40Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "a129b550f1e082e920fe90a0a7e6010539f8aa10"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/6FyUGFC3XR",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "de8b6497218690b1afc42584fde5871700befa71",
+          "url": "http://twitter.com/ZZZZZ/statuses/999999999999999999",
+          "subj": {
+            "title": "Tweet 999999999999999999",
+            "issued": "2017-11-28T09:19:40.000Z",
+            "author": {
+              "url": "http://www.twitter.com/ZZZZZ"
+            },
+            "original-tweet-url": "http://twitter.com/ZZZZZ/statuses/999999999999999999",
+            "original-tweet-author": null,
+            "alternative-id": "999999999999999999"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:43Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "767e9901b3b30576a1a1a97d4e07c8c0e1ec29e1"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://comoaumentarlosgluteos.org/como-hacer-crecer-la-cola-rutina-de-ejercicios-para-tener-las-nalgas-de-jennifer-lopez.html",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/KfLNe7ulpL",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156255871000
+            ]
+          },
+          "matches": [],
+          "id": "f2e0c3658af7d14c0813692f27be0ce8f48d118f",
+          "url": "http://twitter.com/AAAAA/statuses/000000000000000000",
+          "subj": {
+            "title": "Tweet 000000000000000000",
+            "issued": "2017-11-28T09:19:43.000Z",
+            "author": {
+              "url": "http://www.twitter.com/AAAAA"
+            },
+            "original-tweet-url": "http://twitter.com/AAAAA/statuses/000000000000000000",
+            "original-tweet-author": null,
+            "alternative-id": "000000000000000000"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:43Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "9f13ffc114217e1ff1cf76f1c4491d916a52e4ad"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://github.com/kenshohara/3D-ResNets-PyTorch",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/E176RI7h34",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/wfzvkB36Hi",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://arxiv.org/abs/1711.09577",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://arxiv.org/abs/1711.09577"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://twitter.com/RRRRR/status/935360317965598727",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/MiJk6JokYN",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156260077600,
+              930469156251684900
+            ]
+          },
+          "matches": [],
+          "id": "8d4701ab78febdbdc9056ee28b394b6def407952",
+          "url": "http://twitter.com/BBBBB/statuses/AAAAAAAAAAAAAAAAAA",
+          "subj": {
+            "title": "Tweet AAAAAAAAAAAAAAAAAA",
+            "issued": "2017-11-28T09:19:43.000Z",
+            "author": {
+              "url": "http://www.twitter.com/BBBBB"
+            },
+            "original-tweet-url": "http://twitter.com/CCCCC/statuses/BBBBBBBBBBBBBBBBBB",
+            "original-tweet-author": "http://www.twitter.com/CCCCC",
+            "alternative-id": "AAAAAAAAAAAAAAAAAA"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:43Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "24ef5e878bdfccaf1d214efeb9dd3b9c5683a822"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/Pc3R8foWGJ",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "2bd5cf6d801e1448a96a2d8736a66adf99c17192",
+          "url": "http://twitter.com/DDDDD/statuses/CCCCCCCCCCCCCCCCCC",
+          "subj": {
+            "title": "Tweet CCCCCCCCCCCCCCCCCC",
+            "issued": "2017-11-28T09:19:43.000Z",
+            "author": {
+              "url": "http://www.twitter.com/DDDDD"
+            },
+            "original-tweet-url": "http://twitter.com/DDDDD/statuses/CCCCCCCCCCCCCCCCCC",
+            "original-tweet-author": null,
+            "alternative-id": "CCCCCCCCCCCCCCCCCC"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:45Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "f5c9a9cd468b74e002e9fbf874801b91327ed52c"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/tpg_cover_002"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/mITigXWRnA",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "aa31cb2b5a3e79e08874c3a4a84944300ad40c28",
+          "url": "http://twitter.com/EEEEE/statuses/DDDDDDDDDDDDDDDDDD",
+          "subj": {
+            "title": "Tweet DDDDDDDDDDDDDDDDDD",
+            "issued": "2017-11-28T09:19:45.000Z",
+            "author": {
+              "url": "http://www.twitter.com/EEEEE"
+            },
+            "original-tweet-url": "http://twitter.com/EEEEE/statuses/DDDDDDDDDDDDDDDDDD",
+            "original-tweet-author": null,
+            "alternative-id": "DDDDDDDDDDDDDDDDDD"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:47Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "5a98fbf544d63c0473fecc480e2f3f0ae16e94fb"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://arxiv.org/pdf/1711.09020.pdf",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/HWCVvamTnZ",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://github.com/yunjey/StarGAN",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/DPMcUySKex",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156260077600,
+              930469156251684900
+            ]
+          },
+          "matches": [],
+          "id": "dffbecbec3e7c005bb539c61c30abe55a42a8e65",
+          "url": "http://twitter.com/FFFFF/statuses/EEEEEEEEEEEEEEEEEE",
+          "subj": {
+            "title": "Tweet EEEEEEEEEEEEEEEEEE",
+            "issued": "2017-11-28T09:19:47.000Z",
+            "author": {
+              "url": "http://www.twitter.com/FFFFF"
+            },
+            "original-tweet-url": "http://twitter.com/GGGGG/statuses/FFFFFFFFFFFFFFFFFF",
+            "original-tweet-author": "http://www.twitter.com/GGGGG",
+            "alternative-id": "EEEEEEEEEEEEEEEEEE"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:48Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "779d3f2ddc7ce1a5eddb996faa62a447a5cd506f"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/thestudentpocketguide/docs/the_student_pocket_guide_national_e_f04630f46f83e3",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/thestudentpocketguide/docs/the_student_pocket_guide_national_e_f04630f46f83e3"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/f4ifNTae9d",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "37973a7e2cb54af0f04491a3b8d377f0f2fe9f6b",
+          "url": "http://twitter.com/HHHHH/statuses/GGGGGGGGGGGGGGGGGG",
+          "subj": {
+            "title": "Tweet GGGGGGGGGGGGGGGGGG",
+            "issued": "2017-11-28T09:19:48.000Z",
+            "author": {
+              "url": "http://www.twitter.com/HHHHH"
+            },
+            "original-tweet-url": "http://twitter.com/HHHHH/statuses/GGGGGGGGGGGGGGGGGG",
+            "original-tweet-author": null,
+            "alternative-id": "GGGGGGGGGGGGGGGGGG"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:50Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "ccd87682b4c3e28fa2f89574d031a0cbd7af228d"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2664345?utm_source=TWITTER&utm_medium=social_jn&utm_term=1179667249&utm_content=content_engagement|article_engagement&utm_campaign=article_alert&linkId=45171383",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2664345?utm_source=TWITTER&utm_medium=social_jn&utm_term=1179667249&utm_content=content_engagement|article_engagement&utm_campaign=article_alert&linkId=45171383"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/jYEtYFgVGP",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156251684900
+            ]
+          },
+          "matches": [],
+          "id": "73e8140fdb026f29a94b47699b99d4ddf2801cf5",
+          "url": "http://twitter.com/IIIII/statuses/HHHHHHHHHHHHHHHHHH",
+          "subj": {
+            "title": "Tweet HHHHHHHHHHHHHHHHHH",
+            "issued": "2017-11-28T09:19:50.000Z",
+            "author": {
+              "url": "http://www.twitter.com/IIIII"
+            },
+            "original-tweet-url": "http://twitter.com/JJJJJ/statuses/IIIIIIIIIIIIIIIIII",
+            "original-tweet-author": "http://www.twitter.com/JJJJJ",
+            "alternative-id": "HHHHHHHHHHHHHHHHHH"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:50Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "227da0e9a900d1891772b0a2fc579d495a0cba7c"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://twitter.com/SSSSS/status/934354456283615233",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://www.bmj.com/content/359/bmj.j5111",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://www.bmj.com/content/359/bmj.j5111"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/i5cH5x8rWn",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/COpxXodLjn",
+              "candidates": []
+            }
+          ],
+          "events": [
+            {
+              "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+              "obj_id": "https://doi.org/10.1136/bmj.j5111",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-11-28T09:19:50Z",
+              "subj_id": "http://twitter.com/KKKKK/statuses/JJJJJJJJJJJJJJJJJJ",
+              "id": "8c162eda-7117-460a-9d81-f299ef6bbed3",
+              "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+              "action": "add",
+              "subj": {
+                "pid": "http://twitter.com/KKKKK/statuses/JJJJJJJJJJJJJJJJJJ",
+                "url": "http://twitter.com/KKKKK/statuses/JJJJJJJJJJJJJJJJJJ",
+                "title": "Tweet JJJJJJJJJJJJJJJJJJ",
+                "issued": "2017-11-28T09:19:50.000Z",
+                "author": {
+                  "url": "http://www.twitter.com/KKKKK"
+                },
+                "original-tweet-url": "http://twitter.com/LLLLL/statuses/KKKKKKKKKKKKKKKKKK",
+                "original-tweet-author": "http://www.twitter.com/LLLLL",
+                "alternative-id": "JJJJJJJJJJJJJJJJJJ"
+              },
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1136/bmj.j5111",
+                "url": "http://www.bmj.com/content/359/bmj.j5111"
+              },
+              "relation_type_id": "discusses"
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156255879200,
+              930469156260077600
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "http://www.bmj.com/content/359/bmj.j5111",
+              "match": "https://doi.org/10.1136/bmj.j5111"
+            }
+          ],
+          "id": "5e4103c85241616f7fee54fb913fd1c0a4c95fd5",
+          "url": "http://twitter.com/KKKKK/statuses/JJJJJJJJJJJJJJJJJJ",
+          "subj": {
+            "title": "Tweet JJJJJJJJJJJJJJJJJJ",
+            "issued": "2017-11-28T09:19:50.000Z",
+            "author": {
+              "url": "http://www.twitter.com/KKKKK"
+            },
+            "original-tweet-url": "http://twitter.com/LLLLL/statuses/KKKKKKKKKKKKKKKKKK",
+            "original-tweet-author": "http://www.twitter.com/LLLLL",
+            "alternative-id": "JJJJJJJJJJJJJJJJJJ"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:51Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "7fc14a8a96f2324be3ad400a15d44bef01f1cc9e"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/8aQXYi4E0V",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://www.nature.com/articles/nbt.4024?error=cookies_not_supported&code=6a7f88fb-4fbc-40ca-b6b4-973f93c6d262",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://www.nature.com/articles/nbt.4024?error=cookies_not_supported&code=6a7f88fb-4fbc-40ca-b6b4-973f93c6d262"
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+              "obj_id": "https://doi.org/10.1038/nbt.4024",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-11-28T09:19:51Z",
+              "subj_id": "http://twitter.com/MMMMM/statuses/LLLLLLLLLLLLLLLLLL",
+              "id": "48186b9c-e10e-45c3-af51-dbfb7a5f9c03",
+              "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+              "action": "add",
+              "subj": {
+                "pid": "http://twitter.com/MMMMM/statuses/LLLLLLLLLLLLLLLLLL",
+                "url": "http://twitter.com/MMMMM/statuses/LLLLLLLLLLLLLLLLLL",
+                "title": "Tweet LLLLLLLLLLLLLLLLLL",
+                "issued": "2017-11-28T09:19:51.000Z",
+                "author": {
+                  "url": "http://www.twitter.com/MMMMM"
+                },
+                "original-tweet-url": "http://twitter.com/NNNNN/statuses/MMMMMMMMMMMMMMMMMM",
+                "original-tweet-author": "http://www.twitter.com/NNNNN",
+                "alternative-id": "LLLLLLLLLLLLLLLLLL"
+              },
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1038/nbt.4024",
+                "url": "https://www.nature.com/articles/nbt.4024?error=cookies_not_supported&code=6a7f88fb-4fbc-40ca-b6b4-973f93c6d262"
+              },
+              "relation_type_id": "discusses"
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156255862800
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "https://www.nature.com/articles/nbt.4024?error=cookies_not_supported&code=6a7f88fb-4fbc-40ca-b6b4-973f93c6d262",
+              "match": "https://doi.org/10.1038/nbt.4024"
+            }
+          ],
+          "id": "3d42119b1cdd6a273ec83fb15a37aa29f16c81ce",
+          "url": "http://twitter.com/MMMMM/statuses/LLLLLLLLLLLLLLLLLL",
+          "subj": {
+            "title": "Tweet LLLLLLLLLLLLLLLLLL",
+            "issued": "2017-11-28T09:19:51.000Z",
+            "author": {
+              "url": "http://www.twitter.com/MMMMM"
+            },
+            "original-tweet-url": "http://twitter.com/NNNNN/statuses/MMMMMMMMMMMMMMMMMM",
+            "original-tweet-author": "http://www.twitter.com/NNNNN",
+            "alternative-id": "LLLLLLLLLLLLLLLLLL"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:51Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "6d4b8dbf59e2d1e31bdcb01058823dc9eecfb480"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://issuu.com/phondaghatpharmacy/docs/buy_20organic_20pure_20and_20natura",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://issuu.com/phondaghatpharmacy/docs/buy_20organic_20pure_20and_20natura"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/JfW3PCMvHR",
+              "candidates": []
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156268511200,
+              930469156251631600
+            ]
+          },
+          "matches": [],
+          "id": "e99122ce7fd74312d763ecf078abb2393f20aced",
+          "url": "http://twitter.com/OOOOO/statuses/NNNNNNNNNNNNNNNNNN",
+          "subj": {
+            "title": "Tweet NNNNNNNNNNNNNNNNNN",
+            "issued": "2017-11-28T09:19:51.000Z",
+            "author": {
+              "url": "http://www.twitter.com/OOOOO"
+            },
+            "original-tweet-url": "http://twitter.com/OOOOO/statuses/NNNNNNNNNNNNNNNNNN",
+            "original-tweet-author": null,
+            "alternative-id": "NNNNNNNNNNNNNNNNNN"
+          },
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:52Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "b43b035ddc5e092bd1a8a66f9601bd36725b4491"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://twitter.com/TTTTT/status/OOOOOOOOOOOOOOOOOO",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://academic.oup.com/tandt/advance-article-abstract/doi/10.1093/tandt/ttx167/4654800?redirectedFrom=fulltext",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "https://academic.oup.com/tandt/advance-article-abstract/doi/10.1093/tandt/ttx167/4654800?redirectedFrom=fulltext"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/c804s1ktyB",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/Ojsz6aBdjP",
+              "candidates": []
+            }
+          ],
+          "events": [
+            {
+              "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+              "obj_id": "https://doi.org/10.1093/tandt/ttx167",
+              "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+              "occurred_at": "2017-11-28T09:19:52Z",
+              "subj_id": "http://twitter.com/",
+              "id": "b28e6ca0-c5db-4294-822c-7762b09f91ba",
+              "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+              "action": "add",
+              "subj": {},
+              "source_id": "twitter",
+              "obj": {
+                "pid": "https://doi.org/10.1093/tandt/ttx167",
+                "url": "https://academic.oup.com/tandt/advance-article-abstract/doi/10.1093/tandt/ttx167/4654800?redirectedFrom=fulltext"
+              },
+              "relation_type_id": "discusses"
+              "timestamp": "2018-01-01T00:00:04Z",
+            }
+          ],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156255920100,
+              930469156255871000
+            ]
+          },
+          "matches": [
+            {
+              "type": "landing-page-url",
+              "value": "https://academic.oup.com/tandt/advance-article-abstract/doi/10.1093/tandt/ttx167/4654800?redirectedFrom=fulltext",
+              "match": "https://doi.org/10.1093/tandt/ttx167"
+            }
+          ],
+          "id": "4792c1e5c54fd1b692bab72ea7060040c22d0eba",
+          "url": "http://twitter.com/#deleted",
+          "subj": {},
+          "relation-type-id": "discusses"
+        },
+        {
+          "occurred-at": "2017-11-28T09:19:52Z",
+          "processed-observations": [
+            {
+              "type": "plaintext",
+              "sensitive": true,
+              "candidates": [],
+              "input-content-hash": "819f5f949d89f3caa6838174a77254e4b8c1f09c"
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "https://t.co/ynasTTbrwr",
+              "candidates": []
+            },
+            {
+              "type": "url",
+              "sensitive": false,
+              "input-url": "http://www.who.int/reproductivehealth/topics/violence/vaw-health-systems-manual/en/",
+              "candidates": [
+                {
+                  "type": "landing-page-url",
+                  "value": "http://www.who.int/reproductivehealth/topics/violence/vaw-health-systems-manual/en/"
+                }
+              ]
+            }
+          ],
+          "events": [],
+          "extra": {
+            "gnip-matching-rules": [
+              930469156268511200
+            ]
+          },
+          "matches": [],
+          "id": "2924328727a7d514989930dbc84f28000650e3d7",
+          "url": "http://twitter.com/QQQQQ/statuses/QQQQQQQQQQQQQQQQQQ",
+          "subj": {
+            "title": "Tweet QQQQQQQQQQQQQQQQQQ",
+            "issued": "2017-11-28T09:19:52.000Z",
+            "author": {
+              "url": "http://www.twitter.com/QQQQQ"
+            },
+            "original-tweet-url": "http://twitter.com/QQQQQ/statuses/QQQQQQQQQQQQQQQQQQ",
+            "original-tweet-author": null,
+            "alternative-id": "QQQQQQQQQQQQQQQQQQ"
+          },
+          "relation-type-id": "discusses"
+        }
+      ]
+    }
+  ],
+  "percolator": {
+    "artifacts": {
+      "domain-set-artifact-version": "https://artifact.eventdata.crossref.org/a/crossref-domain-list/versions/1510664005338"
+    },
+    "software-version": "0.4.11"
+  },
+  "id": "20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+  "url": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+  "source-id": "twitter",
+  "timestamp": "2017-11-28T09:20:02.594Z",
+  "artifacts": {}
+}

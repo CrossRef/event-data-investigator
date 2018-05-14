@@ -1,0 +1,29 @@
+{
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "obj_id": "https://doi.org/10.1093/tandt/ttx167",
+  "source_token": "45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231",
+  "occurred_at": "2017-11-28T09:19:52Z",
+  "subj_id": "http://twitter.com/PPPPP/statuses/PPPPPPPPPPPPPPPPPP",
+  "id": "b28e6ca0-c5db-4294-822c-7762b09f91ba",
+  "evidence_record": "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741",
+  "action": "add",
+  "subj": {
+    "pid": "http://twitter.com/PPPPP/statuses/PPPPPPPPPPPPPPPPPP",
+    "url": "http://twitter.com/PPPPP/statuses/PPPPPPPPPPPPPPPPPP",
+    "title": "Tweet PPPPPPPPPPPPPPPPPP",
+    "issued": "2017-11-28T09:19:52.000Z",
+    "author": {
+      "url": "http://www.twitter.com/PPPPP"
+    },
+    "original-tweet-url": "http://twitter.com/PPPPP/statuses/PPPPPPPPPPPPPPPPPP",
+    "original-tweet-author": null,
+    "alternative-id": "PPPPPPPPPPPPPPPPPP"
+  },
+  "source_id": "twitter",
+  "obj": {
+    "pid": "https://doi.org/10.1093/tandt/ttx167",
+    "url": "https://academic.oup.com/tandt/advance-article-abstract/doi/10.1093/tandt/ttx167/4654800?redirectedFrom=fulltext"
+  },
+  "relation_type_id": "discusses"
+  "timestamp": "2018-01-01T00:00:04Z",
+}

@@ -4,7 +4,8 @@
             [clj-time.core :as clj-time]
             [clojure.data.json :as json]
             [event-data-common.storage.memory :as memory]
-            [event-data-common.storage.store :as store]))
+            [event-data-common.storage.store :as store]
+            [clojure.java.io :as io]))
 
 (def original-action
   "An action with a selection of placeholder-filled fields, an Event we want to patch, and a few other Events."
@@ -66,7 +67,7 @@
   (testing "patch-action should replace Event, remove sensitive info and leave other Events intact"
     ; Patch in a minimal Event. The id should match, the subj_id should be used.
     (let [patched-event {:id "48186b9c-e10e-45c3-af51-dbfb7a5f9c03"
-                         :subj_id "https://twitter.com#deleted"}
+                         :subj_id "https://twitter.com"}
 
           result (evidence-record/patch-action original-action patched-event)]
 
@@ -76,7 +77,7 @@
                :events [
                   ; This Event has been patched.
                   {:id "48186b9c-e10e-45c3-af51-dbfb7a5f9c03"
-                   :subj_id "https://twitter.com#deleted"
+                   :subj_id "https://twitter.com"
                   }
                  {
                    :id "OTHER_EVENT_1"
@@ -90,7 +91,7 @@
                :id "3d42119b1cdd6a273ec83fb15a37aa29f16c81ce"
 
                ; URL has been replaced with that taken from Event.
-               :url "https://twitter.com#deleted"
+               :url "https://twitter.com"
                
                ; Subj metadata has been removed.
                :subj {}
@@ -131,11 +132,17 @@
                                     {:id "ACTION_ID_4" :events [{:id "8" :subj_id "SUBJECT_ID_8" :subj {:test "METADATA_8"}}
                                                                 {:id "9" :subj_id "SUBJECT_ID_9" :subj {:test "METADATA_9"}}
                                                                 {:id "0" :subj_id "SUBJECT_ID_0" :subj {:test "METADATA_0"}}]}]}]
-                 :test-3 3}]
+                 :test-3 3
+                 :updates [{:id "previous-update"}]}]
 
       (is (= (evidence-record/patch-evidence-record
                input 
-               {:id "2" :subj_id "REDACTED_SUBJ_ID" :subj {:test "REDACTED_SUBJECT_METADATA"}})
+               {:id "2"
+                :subj_id "REDACTED_SUBJ_ID"
+                :subj {:test "REDACTED_SUBJECT_METADATA"}
+                :updated_reason "https://evidence.eventdata.crossref.org/announcements/2017-05-08T08-41-00Z-CED-9.json"
+                :updated "deleted"
+                :updated_date "2017-05-08T17:41:34Z"})
 
                {:test-1 1
                 :test-2 2
@@ -146,13 +153,19 @@
                                     ; url will be replaced with subj_id of the patched Event, as it's probably sensitive.
                                     :url "REDACTED_SUBJ_ID"
                           
-                                    ; subj metadata will be removed altogether, as it's probably sensitive.
-                                    :subj {}
+                                    ; subj metadata will be replaced with that found in the Event.
+                                    :subj {:test "REDACTED_SUBJECT_METADATA"}
 
                                     :events [; First Event won't be touched as it doesn't match the patched Event ID.
                                              {:id "1" :subj_id "SUBJECT_ID_1" :subj {:test "METADATA_1"}}
+                                             
                                              ; This Event should be replaced.
-                                             {:id "2" :subj_id "REDACTED_SUBJ_ID" :subj {:test "REDACTED_SUBJECT_METADATA"}}]}
+                                             {:id "2"
+                                              :subj_id "REDACTED_SUBJ_ID"
+                                              :subj {:test "REDACTED_SUBJECT_METADATA"}
+                                              :updated_reason "https://evidence.eventdata.crossref.org/announcements/2017-05-08T08-41-00Z-CED-9.json"
+                                              :updated "deleted"
+                                              :updated_date "2017-05-08T17:41:34Z"}]}
 
                                    ; This action shouldn't be touched.
                                    {:id "ACTION_ID_2" :events [{:id "3" :subj_id "SUBJECT_ID_3" :subj {:test "METADATA_3"}}
@@ -167,35 +180,70 @@
                                    {:id "ACTION_ID_4" :events [{:id "8" :subj_id "SUBJECT_ID_8" :subj {:test "METADATA_8"}}
                                                                {:id "9" :subj_id "SUBJECT_ID_9" :subj {:test "METADATA_9"}}
                                                                {:id "0" :subj_id "SUBJECT_ID_0" :subj {:test "METADATA_0"}}]}]}]
-                :test-3 3})))))
+                :test-3 3
+                :updates [{:id "previous-update"}
+                          {:id "2" :updated_date "2017-05-08T17:41:34Z" :updated "deleted"}]})))))
 
 (deftest key-from-url
   (testing "key-from-url should return the S3 storage path from an Evidence Record URL"
-
     (is (= (evidence-record/key-from-url "https://evidence.eventdata.crossref.org/evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741")
            "evidence/20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741")
-        "Path should be returned from URL")
+        "Path should be returned from URL")))
 
-    (is (= (evidence-record/key-from-url "20171128-twitter-bcdddbb5-4910-4705-a9dc-38cf2121d741")
-           nil)
-        "When there's no URL, should return nil.")))
+(deftest patch-evidence-record-in-storage!-missing
+  (testing "End-to-end test. patch-evidence-record-in-storage! should should log an error
+            if the Evidence Record doesn't exist, but return nil."
+    (with-redefs [evidence-record/evidence-record-store (delay (memory/build))]
+      (is (nil? (evidence-record/patch-evidence-record-in-storage!
+                  {:id "1234" :evidence_record ""})))
 
-; (deftest patch-evidence-record-in-storage!
-;   (testing "patch-evidence-record-in-storage! should should log an error
-;             if the Evidence Record doesn't exist"
-    
+      (is (nil? (evidence-record/patch-evidence-record-in-storage!
+                  {:id "1234" :evidence_record nil})))
 
-;     (evidence-record/patch-evidence-record-in-storage! )
-;     )
+      (is (nil? (evidence-record/patch-evidence-record-in-storage!
+                  {:id "1234" :evidence_record "https://evidence.eventdata.crossref.org/evidence/DOES_NOT_EXIST"}))))))
 
-;   (testing "patch-evidence-record-in-storage! should should log an error
-;             if the Evidence Record doesn't exist")
+(deftest patch-evidence-record-in-storage!
+  (testing "patch-evidence-record-in-storage! should retrieve the Evidence Record from the Event ID"
+    (let [mock-store (delay (memory/build))
 
-;   (testing "patch-evidence-record-in-storage! should set the result of applying
-;             patch-evidence-record to the input when the given Evidence Record exists")
+          patched-event {
+            :evidence_record "https://evidence.eventdata.crossref.org/evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a"
+            :subj {:wiped "clean"}
+            :subj_id "http://example.com/a"
+            :obj_id "http://example.com/b"}
+          ]
+      
+      (store/set-string
+        @mock-store
+        
+        "evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a"
+        (slurp (io/resource "test/evidence-record/evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a.json")))
 
-;   )
+      ; Mock out the evidence store.
+      (with-redefs [evidence-record/evidence-record-store mock-store]
+        (let [new-event (->
+                          "test/evidence-record/events/AAAAAAAA-BBBB-4955-a9b4-6f5e18421348.json"
+                          io/resource
+                          slurp
+                          (json/read-str :key-fn keyword))]
 
+          ; Now do the patch, using the evidence_record field in the Event.
+          (evidence-record/patch-evidence-record-in-storage! new-event))
 
+        (let [parsed (-> @mock-store
+                         (store/get-string "evidence/20170217CCCCCCCC-DDDD-4320-a927-ee514d41600a")
+                         (json/read-str :key-fn keyword))]
 
+          (is (= (-> parsed :pages first :actions first :events first :subj_id)
+              "http://twitter.com/")
+              "Subject URL should be picked up from Event")
+
+          (is (= (-> parsed :pages first :actions first :events first :subj)
+              {:pid "http://twitter.com/"})
+              "Subject metadata should be picked up from Event")
+
+          (is (= (-> parsed :pages first :actions first :url)
+              "http://twitter.com/")
+              "Action URL should be picked up from Event"))))))
 
