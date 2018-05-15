@@ -33,7 +33,7 @@
       (swap! counter inc)
       (log/info (:id patched-event))
       (evidence-record/patch-evidence-record-in-storage! patched-event)
-      (Thread/sleep 100)
+      
       (when (zero? (rem @counter 100))
         (log/info "Patched" @counter "Events' Evidence Records"))
         

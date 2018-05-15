@@ -247,3 +247,24 @@
               "http://twitter.com/")
               "Action URL should be picked up from Event"))))))
 
+
+
+(deftest evidence-record-already-updated
+  (let [new-event {:id "2"
+                   :subj_id "REDACTED_SUBJ_ID"
+                   :subj {:test "REDACTED_SUBJECT_METADATA"}
+                   :updated_reason "https://evidence.eventdata.crossref.org/announcements/2017-05-08T08-41-00Z-CED-9.json"
+                   :updated "deleted"
+                   :updated_date "2017-05-08T17:41:34Z"}
+
+        blank-evidence-record {:some :data}]
+
+    (testing "evidence-record-already-updated false when no updates"
+      (is (not (evidence-record/evidence-record-already-updated blank-evidence-record new-event))))
+
+    (testing "evidence-record-already-updated true when update made"
+      ; Do the update, then try to determine if it was made.
+      (let [updated-evidence-record (evidence-record/patch-evidence-record blank-evidence-record new-event)]
+        (is (evidence-record/evidence-record-already-updated updated-evidence-record new-event))))))
+
+

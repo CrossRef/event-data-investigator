@@ -57,6 +57,12 @@
         ; If it hasn't, this will result in no change.
         :url (:subj_id patched-event)))))
 
+(def update-event-keys
+  "Which keys are carried from the Event into the Evidence Record updates list.
+   The outcome of this selection of keys is used to decide whether or not a given update has been made to the Evidence Record.
+   Ergo this is used both by patch-evidence-record and evidence-record-already-updated, and these should not be changed without taking account of this."
+  [:id :updated_date :updated])
+
 (defn patch-evidence-record
   "Patch an Evidence Record to replace the given Event 
    with the patched version and remove other sensitive info.
@@ -69,7 +75,7 @@
     
     ; Append the relevant fields from the Event here.
     :updates (conj (:updates evidence-record)
-                   (select-keys patched-event [:id :updated_date :updated]))))
+                   (select-keys patched-event update-event-keys))))
 
 (defn key-from-url
   "Given an Evidence Record URL (as found in an Event), return the storage path in S3."
@@ -83,6 +89,17 @@
         (log/error "Failed to extract storage key for Evidence Record ID" url)
         nil))))
 
+(defn evidence-record-already-updated
+  "Has the given Evidence Record already been updated with the given Event? 
+   Used to dedupe scans."
+   [evidence-record event]
+   
+   ((->> evidence-record
+        :updates
+        (map #(select-keys % update-event-keys))
+        set)
+     (select-keys event update-event-keys)))
+
 (defn patch-evidence-record-in-storage!
   "For an already-patched Event, look up its Evience Record and patch it in storage."
   [patched-event]
@@ -94,9 +111,13 @@
       (let [old-content (json/read-str old-content-json :key-fn keyword)
             patched-content (patch-evidence-record old-content patched-event)
             patched-content-json (json/write-str patched-content)]
-        
-        (store/set-string 
-          @evidence-record-store
-          evidence-record-key
-          patched-content-json)))))
+
+        (if (evidence-record-already-updated old-content patched-event)
+
+            (log/info "Skip updating for Event " (:id patched-event ))
+
+            (store/set-string 
+              @evidence-record-store
+              evidence-record-key
+              patched-content-json))))))
 
