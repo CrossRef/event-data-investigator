@@ -10,5 +10,7 @@ pom.xml.asc
 .hgignore
 .hg/
 docker-compose-local.yml
+docker-compose-local-dev.yml
+docker-compose-local-prod.yml
 .DS_Store
 .m2-cache/

@@ -13,10 +13,10 @@
 
 (defn all-days-since-collected-epoch
   "Sequence of all days since the epoch, up to yesterday."
-  []
-  (let [stop (yesterday)]
+  ([] (all-days-since-collected-epoch (yesterday)))
+  ([until]
     (take-while
-      #(clj-time/before? % stop)
+      #(clj-time/before? % until)
       (periodic/periodic-seq collected-epoch (clj-time/days 1)))))
 
 ; TODO this could be moved into event-data-common.

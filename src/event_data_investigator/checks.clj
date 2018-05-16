@@ -2,6 +2,7 @@
   (:require [event-data-investigator.checks.archive-query-integrity :as archive-query-integrity]
             [event-data-investigator.checks.evidence-log :as evidence-log]
             [event-data-investigator.checks.evidence-record-snapshot :as evidence-record-snapshot]
+            [event-data-investigator.checks.twitter-compliance :as twitter-compliance]
             [overtone.at-at :as at-at]
             [clojure.tools.logging :as log]
             [clj-time.core :as clj-time]))
@@ -9,7 +10,8 @@
 (def manifests
   {:archive-query-integrity archive-query-integrity/manifest
    :evidence-log evidence-log/manifest
-   :evidence-record-snapshot evidence-record-snapshot/manifest})
+   :evidence-record-snapshot evidence-record-snapshot/manifest
+   :twitter-compliance twitter-compliance/manifest})
 
 (def schedule-pool (at-at/mk-pool))
 

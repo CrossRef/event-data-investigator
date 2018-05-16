@@ -1,4 +1,4 @@
-(defproject event-data-investigator "0.1.2"
+(defproject event-data-investigator "0.1.3"
   :description "Event Data Investigator"
   :url "https://www.crossref.org/services/event-data"
   :license {:name "MIT License"
