@@ -1,4 +1,4 @@
-(defproject event-data-investigator "0.1.3"
+(defproject event-data-investigator "0.1.4"
   :description "Event Data Investigator"
   :url "https://www.crossref.org/services/event-data"
   :license {:name "MIT License"
@@ -10,7 +10,11 @@
                  [org.clojure/data.json "0.2.6"]
                  [clj-http-fake "1.0.3"]
                  [throttler "1.0.0"]
-                 [twitter-api "1.8.0"]]
+                 [twitter-api "1.8.0"]
+                 [org.apache.kafka/kafka-clients "1.1.1"]
+                 [org.apache.kafka/kafka_2.12 "1.1.1"]
+                 [com.climate/claypoole "1.1.4"]
+                 [org.clojure/core.async "0.4.474"]]
   :main ^:skip-aot event-data-investigator.core
   :target-path "target/%s"
   ; On 2017-11-11, with 6.7 million Events, 3.5G was used with no pressure.

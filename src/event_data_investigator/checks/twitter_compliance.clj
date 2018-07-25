@@ -46,7 +46,7 @@
   "A static URL that describes the Twitter compliance activity"
   "https://evidence.eventdata.crossref.org/announcements/2017-05-08T08-41-00Z-CED-9.json")
 
-(def twitter-jwt (event-data-common.jwt/sign @bus/jwt-verifier {"sub" "twitter"}))
+(def twitter-jwt (delay (event-data-common.jwt/sign @bus/jwt-verifier {"sub" "twitter"})))
 
 ; https://dev.twitter.com/rest/reference/get/statuses/lookup
 (def ids-per-request 100)
@@ -159,7 +159,7 @@
     (doseq [patched-event patched-events]
       (prn (:id patched-event))
       (swap! updated-count inc)
-      (bus/send-event patched-event twitter-jwt)
+      (bus/send-event patched-event @twitter-jwt)
       (evidence-record/patch-evidence-record-in-storage! patched-event))
 
     (log/info "Done! Updated" @updated-count "Events! Took" (- (System/currentTimeMillis) time-before) "ms")

@@ -49,8 +49,7 @@ The following environment variables are expected:
 
  - `GLOBAL_JWT_SECRETS`
  - `INVESTIGATOR_GITHUB_TOKEN`
- - `GLOBAL_EVENT_BUS_BASE`
- - `GLOBAL_QUERY_BUS_BASE`
+ - `GLOBAL_QUERY_BASE`
  - `GLOBAL_EVENT_BUS_BASE`
  - `QUERY_PREFIX_WHITELIST_ARTIFACT_NAME`
  - `QUERY_WHITELIST_ARTIFACT_NAME`
@@ -68,6 +67,8 @@ The following environment variables are expected:
  - `PERCOLATOR_EVIDENCE_STORAGE`
  - `PERCOLATOR_S3_KEY`
  - `PERCOLATOR_S3_SECRET`
+ - `GLOBAL_EVIDENCE_URL_BASE` e.g. https://evidence.eventdata.crossref.org
+
 
 In order to authenticate with GitHub, an access token with the 'repo' scope is required. The `crossref-support` account is used.
 
@@ -76,6 +77,30 @@ Twitter details come from dashboard at https://apps.twitter.com/ .
 ## Test
 
   time docker-compose -f docker-compose.yml run -w /usr/src/app investigator lein test
+
+## Tools
+
+For use locally.
+
+### Kafka Evidence Records recovery
+
+For use on Kafka data files when there's a serious crash and we want to check over the remaining log files from Kafka's data directory. This tool ingests the Evidence Record input topic and checks with the Evidence Registry to see if each Evidence Record was processed. If not, it will save each one to an output file. Because of file access, easier not to run in a Docker container.
+
+Example usage:
+
+    
+    PERCOLATOR_EVIDENCE_BUCKET_NAME=XXX PERCOLATOR_EVIDENCE_REGION_NAME=XXX PERCOLATOR_S3_KEY=XXX PERCOLATOR_S3_SECRET=XXX time lein run check-kafka-logs-evidence-records ~/data/kafka-rescue-2018-07-24/kafka1/data/ /tmp/kafka-rescue-output hetzner-percolator-input
+
+
+### Kafka Evidence Logs recovery
+
+For use on Kafka data files when there's a serious crash and we want to check over the remaining log files from Kafka's data directory. This tool ingests the Evidence Log input and writes it all, as newline-separated JSON objects, to an output file.
+
+Example usage:
+
+    
+    PERCOLATOR_EVIDENCE_BUCKET_NAME=XXX PERCOLATOR_EVIDENCE_REGION_NAME=XXX PERCOLATOR_S3_KEY=XXX PERCOLATOR_S3_SECRET=XXX time lein run check-kafka-logs-evidence-log ~/data/kafka-rescue-2018-07-24/kafka1/data/ /tmp/kafka-rescue-output/evidencelog.ndjson hetzner-status
+
 
 ## License
 
