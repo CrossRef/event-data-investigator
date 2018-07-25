@@ -92,7 +92,7 @@ Example usage:
     PERCOLATOR_EVIDENCE_BUCKET_NAME=XXX PERCOLATOR_EVIDENCE_REGION_NAME=XXX PERCOLATOR_S3_KEY=XXX PERCOLATOR_S3_SECRET=XXX time lein run check-kafka-logs-evidence-records ~/data/kafka-rescue-2018-07-24/kafka1/data/ /tmp/kafka-rescue-output hetzner-percolator-input
 
 
-### Kafka Evidence Logs recovery
+### Kafka Evidence Logs recovery
 
 For use on Kafka data files when there's a serious crash and we want to check over the remaining log files from Kafka's data directory. This tool ingests the Evidence Log input and writes it all, as newline-separated JSON objects, to an output file.
 
