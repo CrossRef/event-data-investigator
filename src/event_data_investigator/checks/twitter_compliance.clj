@@ -72,20 +72,33 @@
 (def check-deleted-tweet-ids-throttled
   (throttle-fn check-deleted-tweet-ids-robust throttle-per-minute :minute))
 
-(defn url->tweet-id
-  [url]
-  (when url
-    (let [url (java.net.URL. url)
-          url-path (.getPath url)
-          number (second (re-find #"/(\d+)$" url-path))]
-      
-      ; Quick sanity check to guard against non-twitter URLs matching.
-      (when (.endsWith (.getHost url) "twitter.com")
-        number))))
+(defn uri->tweet-id
+  [uri]
+  (when uri
+    (let [uri (java.net.URI. uri)
+          uri-path (.getPath uri)
+          uri-query (.getQuery uri)
+
+          ; Number from e.g. "/1234" old-style URLs.
+          path-number (some->> uri-path (re-find #"/(\d+)$" ) second)
+
+          ; Number from new query param, e.g. "?id=1234"
+          id-number (some->> uri-query (re-find #"\\?id=(\d+)") second)
+
+          ; Quick sanity check to guard against non-twitter URLs matching.
+          is-twitter (or
+                      ; Old-style URL.
+                      (some-> uri .getHost (.endsWith "twitter.com"))
+                      ; New-style URI.
+                      (some-> uri .getScheme (= "twitter")))]
+
+
+      (when is-twitter
+        (or path-number id-number)))))
 
 (defn event->tweet-id
   [event]
-  (-> event :subj_id url->tweet-id))
+  (-> event :subj_id uri->tweet-id))
 
 (def date-format
   (:date-time-no-ms clj-time-format/formatters))

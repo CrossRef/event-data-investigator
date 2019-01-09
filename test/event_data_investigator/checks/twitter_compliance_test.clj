@@ -6,15 +6,23 @@
 
 (deftest url->tweet-id
   (testing "tweet-id-from-url should retrieve the numerical tweet ID, from a range of URLs"
-    (is (= (twitter-compliance/url->tweet-id "http://twitter.com/USERNAME/statuses/123456")
-           (twitter-compliance/url->tweet-id "https://twitter.com/USERNAME/statuses/123456")
-           (twitter-compliance/url->tweet-id "https://twitter.com/statuses/123456")
-           (twitter-compliance/url->tweet-id "https://m.twitter.com/statuses/123456")
+    (is (= (twitter-compliance/uri->tweet-id "http://twitter.com/USERNAME/statuses/123456")
+           (twitter-compliance/uri->tweet-id "https://twitter.com/USERNAME/statuses/123456")
+           (twitter-compliance/uri->tweet-id "https://twitter.com/statuses/123456")
+           (twitter-compliance/uri->tweet-id "https://m.twitter.com/statuses/123456")
            "123456")))
 
+  (testing "tweet-id-from-url should the tweet ID from new 'app url' format."
+           (is (= (twitter-compliance/uri->tweet-id "twitter://status?id=123456")
+                  "123456"))
+
+           ; Any random query parameters should be discarded
+           (is (= (twitter-compliance/uri->tweet-id "twitter://status?id=123456&2+2=5")
+                  "123456")))
+
   (testing "tweet-id-from-url shouldn't return when this isn't a twitter URL (by mistake)"
-    (is (= (twitter-compliance/url->tweet-id "http://example.com/USERNAME/statuses/123456")
-           (twitter-compliance/url->tweet-id "https://doi.org/10.5555/12345678")
+    (is (= (twitter-compliance/uri->tweet-id "http://example.com/USERNAME/statuses/123456")
+           (twitter-compliance/uri->tweet-id "https://doi.org/10.5555/12345678")
            nil))))
 
 
